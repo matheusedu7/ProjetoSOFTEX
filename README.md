@@ -91,11 +91,12 @@ Este projeto fornece uma solução prática e automatizada para a criação de c
 
 --- 
 
+
+Este projeto foi idealizado para facilitar o gerenciamento e formalização de contratos de uma empresa construtora, promovendo um processo mais seguro e eficiente.
+---
 ## Autores
 ### Matheus Eduardo Morais de Faria
 ### Khyra de Oliveira
 ### Filipe de Barros
 ### Matheus Chagas
 ### Eudes Tiné
-
-Este projeto foi idealizado para facilitar o gerenciamento e formalização de contratos de uma empresa construtora, promovendo um processo mais seguro e eficiente.
