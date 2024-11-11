@@ -1,155 +1,101 @@
-# ProjetoSOFTEX
-
-# Sistema de Gestão de Propostas e Contratos - Empresa Construtora
-
-Este sistema de gerenciamento de propostas e contratos permite à construtora gerenciar todo o ciclo de venda de imóveis, desde o cadastro de clientes e imóveis até a criação de propostas, formalização de contratos e acompanhamento de pagamentos. 
-
----
-
-## Tabela de Conteúdos
-
-- [Visão Geral](#visão-geral)
-- [Entidades e Atributos](#entidades-e-atributos)
-  - [Cliente](#cliente)
-  - [Imóvel](#imóvel)
-  - [Proposta](#proposta)
-  - [Contrato](#contrato)
-  - [Pagamento](#pagamento)
-- [Relacionamentos](#relacionamentos)
-- [Regras de Negócio](#regras-de-negócio)
-- [Fluxo de Operação](#fluxo-de-operação)
-- [Consultas Úteis](#consultas-úteis)
-- [Considerações Finais](#considerações-finais)
+# Documentação do Projeto - Sistema de Checklist e Geração de Contratos para Empresa Construtora
 
 ---
 
 ## Visão Geral
 
-O sistema foi desenvolvido para auxiliar a empresa construtora no acompanhamento de vendas de imóveis, registrando as informações de clientes, imóveis, propostas de compra, contratos e pagamentos. Ele permite uma visão completa do status de cada negociação e facilita a administração de contratos e propostas.
+Este projeto tem como objetivo criar um sistema de checklist automatizado para auxiliar uma construtora na organização e formalização de contratos de venda de imóveis. Ele orienta o usuário a seguir um conjunto de passos, garantindo que todas as verificações necessárias sejam feitas antes da criação de um contrato formal. Ao final do checklist, o sistema gera automaticamente um contrato com as propostas de compra aceitas, restando apenas a assinatura dos envolvidos.
 
 ---
 
-## Entidades e Atributos
+## Funcionalidades
 
-### Cliente
+### 1. **Checklist de Verificação**
 
-Armazena informações sobre os clientes, que podem ser compradores ou vendedores de imóveis.
+- **Descrição**: O sistema apresenta um checklist de tarefas que devem ser concluídas para garantir que todos os dados e condições estão corretos antes da assinatura do contrato.
+- **Objetivo**: Orientar o usuário por cada etapa crítica do processo de verificação, evitando erros ou omissões antes da formalização da venda.
+- **Tarefas do Checklist**:
+  - Revisão dos dados do comprador e do vendedor.
+  - Verificação das condições de pagamento.
+  - Confirmação da disponibilidade e status do imóvel.
+  - Conferência dos documentos necessários para o contrato.
 
-- **ID Cliente**: Identificador único.
-- **Nome**: Nome completo.
-- **CPF/CNPJ**: Documento do cliente (CPF ou CNPJ).
-- **Endereço**: Endereço de contato.
-- **Telefone**: Número de telefone.
-- **Email**: Endereço de e-mail.
-- **Tipo**: Classificação (comprador ou vendedor).
+### 2. **Geração de Contrato com Base nas Propostas Aceitas**
 
-### Imóvel
+- **Descrição**: Após a conclusão do checklist, o sistema compila todas as propostas de compra aceitas em um contrato de venda detalhado.
+- **Objetivo**: Criar um documento de contrato contendo as informações completas das partes envolvidas e das condições acordadas, pronto para ser assinado.
+- **Elementos do Contrato**:
+  - Dados do comprador e do vendedor.
+  - Descrição do imóvel (localização, características, etc.).
+  - Valor da venda e condições de pagamento (ex.: financiamento, entrada, parcelas).
+  - Termos e condições específicos de cada proposta aceita.
 
-Representa os imóveis disponíveis para venda.
+### 3. **Exportação e Salvamento do Contrato**
 
-- **ID Imóvel**: Identificador único.
-- **Endereço**: Localização do imóvel.
-- **Tipo**: Tipo do imóvel (ex.: apartamento, casa).
-- **Área**: Área em metros quadrados.
-- **Quantidade de Quartos**: Número de quartos.
-- **Quantidade de Banheiros**: Número de banheiros.
-- **Valor de Venda**: Valor de venda inicial.
-- **Status**: Estado atual do imóvel (disponível, vendido, etc.).
-
-### Proposta
-
-Registra propostas de compra feitas por compradores para os imóveis.
-
-- **ID Proposta**: Identificador único.
-- **ID Comprador**: Identificador do cliente comprador (FK).
-- **ID Vendedor**: Identificador do cliente vendedor (FK).
-- **ID Imóvel**: Identificador do imóvel (FK).
-- **Valor Oferecido**: Valor ofertado pelo comprador.
-- **Data da Proposta**: Data de criação da proposta.
-- **Forma de Pagamento**: Modo de pagamento (financiamento, à vista).
-- **Sinal de Entrada**: Valor da entrada, se aplicável.
-- **Parcelas**: Detalhes de parcelamento.
-- **Condições da Proposta**: Observações específicas.
-- **Prazo para Aceite**: Data limite para resposta do vendedor.
-- **Status da Proposta**: Estado da proposta (pendente, aceita, rejeitada).
-- **Data de Aceite/Rejeição**: Data de resposta do vendedor.
-
-### Contrato
-
-Formaliza propostas aceitas, transformando-as em contratos de venda.
-
-- **ID Contrato**: Identificador único.
-- **ID Proposta**: Identificador da proposta associada (FK).
-- **Data de Assinatura**: Data de assinatura.
-- **Valor Final**: Valor final acordado.
-- **Termos e Condições**: Condições e cláusulas do contrato.
-- **Status do Contrato**: Estado atual (ativo, cancelado).
-
-### Pagamento
-
-Registra os pagamentos feitos pelo comprador como parte do contrato.
-
-- **ID Pagamento**: Identificador único.
-- **ID Contrato**: Identificador do contrato associado (FK).
-- **Data do Pagamento**: Data de pagamento.
-- **Valor do Pagamento**: Quantia paga.
-- **Método de Pagamento**: Forma de pagamento (ex.: boleto).
-- **Status do Pagamento**: Estado do pagamento (pago, pendente).
-
----
-
-## Relacionamentos
-
-1. **Cliente - Proposta**: Um cliente pode estar em várias propostas, como comprador ou vendedor.  
-   Relacionamento: **1:N**.
-
-2. **Imóvel - Proposta**: Um imóvel pode receber múltiplas propostas.  
-   Relacionamento: **1:N**.
-
-3. **Proposta - Contrato**: Uma proposta aceita se torna um contrato.  
-   Relacionamento: **1:1**.
-
-4. **Contrato - Pagamento**: Um contrato pode ter vários pagamentos, em caso de parcelamento.  
-   Relacionamento: **1:N**.
-
----
-
-## Regras de Negócio
-
-1. **Exclusividade de Imóvel**: Um imóvel vendido ou em negociação ativa não pode receber novas propostas.
-2. **Prazo de Aceite da Proposta**: Propostas expiram após o prazo limite, passando para o status "vencida".
-3. **Conversão de Proposta em Contrato**: Apenas propostas aceitas podem ser transformadas em contratos.
-4. **Controle de Pagamentos**: Pagamentos devem ser registrados e o status de pendências precisa ser monitorado.
+- **Descrição**: O sistema gera e salva o contrato em um formato adequado (ex.: PDF ou texto), permitindo que ele seja impresso ou digitalmente assinado.
+- **Objetivo**: Facilitar o armazenamento e a assinatura do contrato final, oferecendo uma versão consolidada e formatada de todas as propostas aceitas.
+- **Estrutura do Documento Exportado**:
+  - Cabeçalho com data e identificação do contrato.
+  - Listagem das propostas aceitas, com seus detalhes específicos.
+  - Campos para assinatura do comprador e do vendedor ao final do documento.
 
 ---
 
 ## Fluxo de Operação
 
-1. **Cadastro de Cliente**: Adiciona informações do cliente (comprador ou vendedor).
-2. **Cadastro de Imóvel**: Registra os imóveis disponíveis.
-3. **Proposta de Compra**: Permite ao comprador fazer uma proposta para o imóvel.
-4. **Aceite/Rejeição da Proposta**: O vendedor responde à proposta, que pode ser aceita ou rejeitada.
-5. **Formalização de Contrato**: Uma proposta aceita se transforma em contrato.
-6. **Registro de Pagamentos**: Monitoramento dos pagamentos de acordo com o contrato.
+1. **Início do Checklist**:
+   - O usuário inicia o checklist e é guiado através de cada passo necessário, concluindo uma tarefa por vez.
+
+2. **Marcações de Conclusão**:
+   - Após cada tarefa concluída, o usuário pode marcar o passo como “OK”, sinalizando que a etapa foi verificada e aprovada.
+
+3. **Geração do Contrato**:
+   - Ao concluir todos os passos, o sistema gera automaticamente o contrato, consolidando as informações das propostas aceitas e formatando o documento para assinatura.
+
+4. **Exportação**:
+   - O contrato é salvo e disponibilizado para download ou impressão, facilitando a assinatura das partes envolvidas.
 
 ---
 
-## Consultas Úteis
+## Regras de Negócio
 
-- Listar todos os imóveis disponíveis para venda.
-- Obter todas as propostas pendentes de resposta.
-- Listar contratos ativos e seus pagamentos.
-- Consultar histórico de pagamentos de um cliente.
-- Listar todas as propostas de um imóvel específico.
+1. **Somente Propostas Aceitas**: Apenas as propostas que foram previamente aceitas pelo vendedor podem ser incluídas no contrato final.
+2. **Checklist Completo para Geração do Contrato**: A geração do contrato só é permitida após a conclusão de todos os passos do checklist.
+3. **Controle de Validade do Imóvel**: Imóveis com status de “vendido” ou “indisponível” não devem aparecer para novas propostas.
+4. **Personalização de Condições**: Cada contrato deve refletir as condições específicas acordadas entre comprador e vendedor.
+
+---
+
+## Casos de Uso
+
+- **Caso 1**: Usuário executa o checklist e cria um contrato para um imóvel.
+  - **Fluxo**: Usuário preenche cada etapa do checklist, ao final, o sistema gera o contrato com os dados inseridos.
+  
+- **Caso 2**: Um comprador faz uma proposta e o sistema adiciona a proposta aceita ao contrato.
+  - **Fluxo**: O sistema verifica a proposta, insere os dados do comprador e, caso aceite, armazena no contrato.
+  
+---
+
+## Requisitos do Projeto
+
+1. **Checklist Dinâmico**: As etapas do checklist devem ser editáveis para permitir ajustes conforme as necessidades da construtora.
+2. **Geração de Documento**: O contrato deve ser gerado em um formato amplamente aceito (PDF ou DOCX).
+3. **Interface de Usuário**: Interface intuitiva que orienta o usuário através de cada etapa.
+4. **Armazenamento Seguro de Dados**: Propostas e contratos devem ser armazenados com segurança para evitar perda de dados.
 
 ---
 
 ## Considerações Finais
 
-O sistema facilita o gerenciamento de vendas de imóveis, organizando todas as etapas de uma negociação. Ele permite que a construtora acompanhe e registre todas as propostas, contratos e pagamentos, proporcionando transparência e controle sobre o processo de vendas.
+Este projeto fornece uma solução prática e automatizada para a criação de contratos de venda de imóveis, reduzindo o tempo de formalização e evitando erros humanos. Ele permite à construtora um controle eficiente das propostas aceitas e das condições de venda, organizando o processo até o momento da assinatura final.
 
 --- 
 
-### Contato
+## Autores
+### Matheus Eduardo Morais de Faria
+### Khyra de Oliveira
+### Filipe de Barros
+### Matheus Chagas
+### Eudes Tiné
 
-Em caso de dúvidas ou sugestões, entre em contato com o time de desenvolvimento da construtora.
+Este projeto foi idealizado para facilitar o gerenciamento e formalização de contratos de uma empresa construtora, promovendo um processo mais seguro e eficiente.
