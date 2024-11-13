@@ -8,6 +8,7 @@
 - Eudes Tiné
 - João Elias
 - Bruno Carneiro
+- Marco Dallas
 
 ## Visão Geral
 Este projeto tem como objetivo criar um sistema automatizado de checklist para auxiliar uma construtora na organização e formalização de contratos de venda de imóveis. O sistema orienta o usuário a seguir uma série de etapas de verificação, garantindo que todas as checagens necessárias sejam realizadas antes da criação de um contrato formal. Ao final do checklist, o sistema gera automaticamente um contrato com as propostas de compra aceitas, restando apenas as assinaturas dos envolvidos.
@@ -68,10 +69,10 @@ Este projeto tem como objetivo criar um sistema automatizado de checklist para a
 
 ## Requisitos do Projeto
 
-1. **Checklist Dinâmico:** As etapas do checklist devem ser editáveis para permitir ajustes conforme as necessidades da construtora.
-2. **Geração de Documento:** O contrato deve ser gerado em um formato amplamente aceito (PDF ou DOCX).
+1. **Checklist Dinâmico:** As etapas do checklist são editáveis para permitir ajustes conforme as necessidades da construtora.
+2. **Geração de Documento:** O contrato é gerado em um formato amplamente aceito (PDF ou DOCX).
 3. **Interface de Usuário:** Interface intuitiva que orienta o usuário através de cada etapa.
-4. **Armazenamento Seguro de Dados:** Propostas e contratos devem ser armazenados com segurança para evitar perda de dados.
+4. **Armazenamento Seguro de Dados:** Propostas e contratos são armazenados com segurança para evitar perda de dados.
 
 ## Estrutura do Banco de Dados
 
