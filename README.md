@@ -94,12 +94,3 @@ A estrutura do banco de dados inclui as seguintes entidades principais, conforme
 
 ## Considerações Finais
 Este projeto fornece uma solução prática e automatizada para a criação de contratos de venda de imóveis, reduzindo o tempo de formalização e evitando erros humanos. Ele permite à construtora um controle eficiente das propostas aceitas e das condições de venda, organizando o processo até o momento da assinatura final.
-
-### Autores
-- Matheus Eduardo Morais de Faria
-- Khyra de Oliveira
-- Filipe de Barros
-- Matheus Chagas
-- Eudes Tiné
-- João Elias
-- Bruno Carneiro
