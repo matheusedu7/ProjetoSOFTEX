@@ -1,14 +1,14 @@
 # Sistema de Checklist e Geração de Contratos para Azur Development
 
 ### Autores
-- Matheus Eduardo Morais de Faria
-- Khyra de Oliveira
-- Filipe de Barros
-- Matheus Chagas
-- Eudes Tiné
-- João Elias
-- Bruno Carneiro
-- Marco Dallas
+- Matheus Eduardo Morais: Back-end e Documentação
+- Khyra de Oliveira: Banco de dados
+- Filipe de Barros: Tester
+- Matheus Chagas: Back-end e Revisão
+- Eudes Tiné: Banco de dados
+- João Elias: Banco de dados e Back-end
+- Bruno Carneiro: Back-end
+- Marco Dallas: Back-end
 
 ## Visão Geral
 Este projeto tem como objetivo criar um sistema automatizado de checklist para auxiliar uma construtora na organização e formalização de contratos de venda de imóveis. O sistema orienta o usuário a seguir uma série de etapas de verificação, garantindo que todas as checagens necessárias sejam realizadas antes da criação de um contrato formal. Ao final do checklist, o sistema gera automaticamente um contrato com as propostas de compra aceitas, restando apenas as assinaturas dos envolvidos.
