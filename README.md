@@ -76,7 +76,7 @@ Este projeto visa criar um sistema automatizado de checklist para auxiliar uma c
 
 ## Estrutura do Banco de Dados
 
-A estrutura do banco de dados inclui as seguintes entidades principais, conforme observado no modelo conceitual:
+A estrutura do banco de dados inclui as seguintes entidades principais, a partir do modelo conceitual:
 
 1. **Cliente**: Armazena informações do cliente, como nome, contato e documentos.
 2. **Usuário**: Gerencia dados relacionados aos usuários, possivelmente representando funcionários ou agentes envolvidos na gestão de contratos.
