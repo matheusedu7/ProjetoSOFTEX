@@ -1,4 +1,4 @@
-# Sistema de Checklist e Geração de Contratos para Empresa Construtora
+# Sistema de Checklist e Geração de Contratos para Azur Development
 
 ### Autores
 - Matheus Eduardo Morais de Faria
