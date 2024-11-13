@@ -1,4 +1,13 @@
-# Documentação do Projeto - Sistema de Checklist e Geração de Contratos para Empresa Construtora
+# Sistema de Checklist e Geração de Contratos para Empresa Construtora
+
+### Autores
+- Matheus Eduardo Morais de Faria
+- Khyra de Oliveira
+- Filipe de Barros
+- Matheus Chagas
+- Eudes Tiné
+- João Elias
+- Bruno Carneiro
 
 ## Visão Geral
 Este projeto tem como objetivo criar um sistema automatizado de checklist para auxiliar uma construtora na organização e formalização de contratos de venda de imóveis. O sistema orienta o usuário a seguir uma série de etapas de verificação, garantindo que todas as checagens necessárias sejam realizadas antes da criação de um contrato formal. Ao final do checklist, o sistema gera automaticamente um contrato com as propostas de compra aceitas, restando apenas as assinaturas dos envolvidos.
