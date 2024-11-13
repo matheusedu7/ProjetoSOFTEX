@@ -66,9 +66,6 @@ Este projeto tem como objetivo criar um sistema automatizado de checklist para a
 ### Caso 1: Usuário executa o checklist e cria um contrato para um imóvel
 - **Fluxo:** O usuário preenche cada etapa do checklist, ao final, o sistema gera o contrato com os dados inseridos.
 
-### Caso 2: Um comprador faz uma proposta e o sistema adiciona a proposta aceita ao contrato
-- **Fluxo:** O sistema verifica a proposta, insere os dados do comprador e, caso aceita, armazena no contrato.
-
 ## Requisitos do Projeto
 
 1. **Checklist Dinâmico:** As etapas do checklist devem ser editáveis para permitir ajustes conforme as necessidades da construtora.
