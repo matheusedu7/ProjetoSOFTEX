@@ -3,7 +3,7 @@
 ### Autores
 - Matheus Eduardo Morais: Back-end e Documentação
 - Khyra de Oliveira: Banco de dados
-- Filipe de Barros: Tester
+- Filipe de Barros: Back-end e Testes
 - Matheus Chagas: Back-end e Revisão
 - Eudes Tiné: Banco de dados
 - João Elias: Banco de dados e Back-end
