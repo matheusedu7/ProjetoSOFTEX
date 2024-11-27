@@ -1,4 +1,3 @@
-use projeto;
 create table dados_movel(
   fase_imovel varchar(20) not null,
   nome_empreendimento varchar(50) not null,
